@@ -1,0 +1,17 @@
+# Define the base Python environment
+FROM python:3.8
+
+# Create a working directory
+WORKDIR /app
+
+# Copy project files from current directory
+COPY . .
+
+# Install required Python packages
+RUN pip install pandas scikit-learn  # Replace with your specific libraries
+
+# Expose the port for Flask application (if applicable)
+EXPOSE 5000  # Adjust port number if needed
+
+# Set the default command to be executed when the container starts
+CMD [ "python", "your_script.py" ]  # Replace with your main script name
